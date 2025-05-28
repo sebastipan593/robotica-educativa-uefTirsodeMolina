@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica Educativa - ¡Aprende y Diviértete!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: lightblue;
+        color: #f1c40f;
+    }
+
+    header {
+        background-color: #f1c40f; /* Naranja llamativo */
+        color: white;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        background-color: #fb8c00; /* Naranja más oscuro al pasar el ratón */
+    }
+
+    main {
+        padding: 20px;
+        min-height: calc(100vh - 140px);
+    }
+
+    .home h1 {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1.8rem;
+        color: #ffdb58;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+
+    .home .hero {
+        background-color: #fb8c00; /* Celeste claro */
+        color: #333;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .home .hero p {
+        font-size: 1.1rem;
+    }
+
+    .home .hero-image {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .home .highlights {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .home .highlights div {
+        background-color: #f7dc6f; /* Amarillo muy claro */
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .objective section,
+    .games section,
+    .topics section,
+    .video-support section {
+        background-color: #fb8c00;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .objective h2,
+    .games h2,
+    .topics h2,
+    .video-support h2 {
+        color: #000000;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    .objective ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        font-size: 1.1rem;
+    }
+
+    .objective .page-image {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .games .game-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .games .game-card {
+        background-color: #81c784;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .games .game-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .games .game-card h3 {
+        color: #ffb74d;
+        margin-top: 0;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1.2rem;
+    }
+
+    .games .game-card a {
+        display: inline-block;
+        background-color: #f1c40f;
+        color: white;
+        padding: 0.7em 1.5em;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+    }
+
+    .games .game-card a:hover {
+        background-color: #f1c40f;
+    }
+
+    .games .game-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .topics .submenu {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .topics .submenu-btn {
+        background-color: #81c784; /* Verde claro */
+        color: #333;
+        padding: 12px 15px;
+        border: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1rem;
+    }
+
+    .topics .submenu-btn:hover {
+        background-color: #81c784; /* Verde un poco más oscuro */
+    }
+
+    .topics .submenu-btn.active {
+        background-color: #f1c40f;
+    }
+
+    .topics .submenu-content {
+        display: none;
+        padding: 15px;
+        background-color: #f1c40f; /* Amarillo muy claro */
+        border-top: 1px solid #ccc;
+    }
+
+    .topics .submenu-content.show {
+        display: block;
+    }
+
+    .topics .submenu-content h3 {
+        margin-top: 0;
+        color: #558b2f;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1rem;
+    }
+
+    .topics .submenu-content ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        font-size: 1.1rem;
+    }
+
+    .video-support .video-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .video-support .video-item {
+        background-color: #81c784;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-support .video-item h3 {
+        margin-top: 0;
+        color: #000000;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1.2rem;
+    }
+
+    .video-support .video-item video {
+        max-width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-support .video-item p {
+        margin-top: 10px;
+        font-size: 1.1rem;
+    }
+
+    footer {
+        background-color: #ffbf00;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        .home .highlights {
+            flex-direction: column;
+        }
+
+        .home .highlights div {
+            margin-bottom: 20px;
+            min-width: auto;
+        }
+
+        .games .game-links {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .home h1 {
+            font-size: 1.5rem;
+        }
+
+        .home .hero p {
+            font-size: 1rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="objetivo.html">Objetivo</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+                <li><a href="temario.html">Temario</a></li>
+                <li><a href="video.html">Video de Apoyo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home">
+        <section class="hero">
+            <h1>¡Bienvenidos al Mundo de la Robótica Educativa!</h1>
+            <p>Descubre, aprende y diviértete con la tecnología y los robots.</p>
+            <img src="https://images.pexels.com/photos/1194141/pexels-photo-1194141.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Robot Amigable" class="hero-image">
+        </section>
+
+        <section class="highlights">
+            <div>
+                <h3>Explora</h3>
+                <p>Aprende los fundamentos de la robótica de forma interactiva.</p>
+            </div>
+            <div>
+                <h3>Crea</h3>
+                <p>Diseña y construye tus propios proyectos robóticos.</p>
+            </div>
+            <div>
+                <h3>Diviértete</h3>
+                <p>Juega y experimenta con desafíos emocionantes.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Robótica Educativa para Niños</p>
+    </footer>
+</body>
+</html>
+
